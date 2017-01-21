@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Module 3 Assignment</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-app="NarrowItDownApp">
+    <div class="" ng-controller="NarrowItDownController as control">
+        <input type="text" name="Search" placeholder="Narrow It down" ng-model="control.searchKey">
+        <button type="button" name="button" ng-click="control.search()">Search</button>
+        <br>
+        <ol>
+            <li ng-repeat="item in control.searchResult">
+              <ul>
+                <li>Name:&nbsp;{{item.name}}</li>
+                <li>description:&nbsp;{{item.description}}</li>
+                <li><button type="button" name="button" ng-click="control.removeItem($index)">Remove item</button></li>
+              </ul></li>
+        </ol>
+    </div>
+  </body>
+</html>
